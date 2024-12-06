@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudArc - Create Account</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    {% load static %}
+    <!-- css links.. -->
+     <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-image">
+            <div class="overlay-text">
+                <h3>Join CloudArc</h3>
+                <p>Create Your Account and Unlock Powerful Cloud Solutions</p>
+            </div>
+        </div>
+        <div class="registration-form">
+            <h2>Create Your Account</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" class="form-control" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                    <label class="form-check-label" for="agreeTerms">I agree to the Terms and Conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-register w-100">Create Account</button>
+                
+                <div class="text-center mt-3">
+                    <p class="text-muted">Or register with</p>
+                    <div class="social-login">
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p class="text-muted">Already have an account? <a href="../" class="text-primary">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
